@@ -25,3 +25,12 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.82/bin/apache-tomcat-9.0.82.ta
 RUN tar xf apache-tomcat-9.0.82.tar.gz && rm apache-tomcat-9.0.82.tar.gz
 EXPOSE 8080
 CMD ["/tomcat/apache-tomcat-9.0.82/bin/catalina.sh", "run"]
+
+
+Dockerfile for SpringBootApplication
+
+FROM openjdk:11-jre-slim
+WORKDIR /usr/src/app
+COPY your-app.jar .
+EXPOSE 8080
+CMD ["java", "-jar", "your-app.jar"]
